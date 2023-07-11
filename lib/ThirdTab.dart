@@ -16,113 +16,116 @@ class ThirdTab extends StatefulWidget {
 }
 
 class _ThirdTabState extends State<ThirdTab> {
-  List<String> memoList = [];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Column(
+    return Consumer<MemoService>(
+      builder: (context, memoService, child) {
+        List<Memo> memoList = memoService.memoList;
+
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Stack(
             children: [
-              Image.asset('path/to/your/image'), // 이미지 경로 설정
-              Text(
-                '김지견',
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-              Row(
+              Column(
                 children: [
-                  Text("경력"),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 24),
-                      child: TextField(),
+                  Image.asset('path/to/your/image'), // 이미지 경로 설정
+                  Text(
+                    '김지견',
+                    style: TextStyle(
+                      color: Colors.black,
                     ),
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("강점"),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 24),
-                      child: TextField(),
-                    ),
+                  Row(
+                    children: [
+                      Text("경력"),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 24),
+                          child: TextField(),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("강점"),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 24),
-                      child: TextField(),
-                    ),
+                  Row(
+                    children: [
+                      Text("강점"),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 24),
+                          child: TextField(),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("강점"),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 24),
-                      child: TextField(),
-                    ),
+                  Row(
+                    children: [
+                      Text("강점"),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 24),
+                          child: TextField(),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Spacer(),
-              memoList.isEmpty
-                  ? BottomAppBar(
-                      child: Text("입력된 메모가 없습니다."),
-                    )
-                  : ListView.builder(
-                      itemCount: memoList.length, // memoList 개수 만큼 보여주기
-                      itemBuilder: (context, index) {
-                        String memo = memoList[index]; // index에 해당하는 memo 가져오기
-                        return ListTile(
-                          trailing: IconButton,
-                          title: Text(
-                            memo,
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => DetailPage(
-                                  index: index,
-                                ),
+                  Row(
+                    children: [
+                      Text("강점"),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 24),
+                          child: TextField(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  memoList.isEmpty
+                      ? BottomAppBar(
+                          child: Text("입력된 메모가 없습니다."),
+                        )
+                      : ListView.builder(
+                          itemCount: memoList.length,
+                          itemBuilder: (context, index) {
+                            Memo memo = memoList[index];
+                            return ListTile(
+                              title: Text(
+                                memo.content,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
                               ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => DetailPage(
+                                      index: index,
+                                    ),
+                                  ),
+                                );
+                              },
                             );
                           },
-                        );
-                      },
-                    ),
+                        ),
+                ],
+              ),
             ],
           ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.edit),
-        onPressed: () {
-          memoService.createMemo(content: '');
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) =>
-                  DetailPage(index: memoservice.memoList.length - 1),
-            ),
-          );
-        },
-      ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.edit),
+            onPressed: () {
+              memoService.createMemo(content: '');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) =>
+                      DetailPage(index: memoService.memoList.length - 1),
+                ),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }
@@ -152,19 +155,17 @@ class DetailPage extends StatelessWidget {
                   return AlertDialog(
                     title: Text("정말로 삭제하시겠습니까?"),
                     actions: [
-                      // 취소 버튼
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
                         child: Text("취소"),
                       ),
-                      // 확인 버튼
                       TextButton(
                         onPressed: () {
                           memoService.deleteMemo(index: index);
-                          Navigator.pop(context); // 팝업 닫기
-                          Navigator.pop(context); // HomePage 로 가기
+                          Navigator.pop(context);
+                          Navigator.pop(context);
                         },
                         child: Text(
                           "확인",

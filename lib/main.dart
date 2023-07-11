@@ -13,8 +13,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 late SharedPreferences prefs;
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  prefs = await SharedPreferences.getInstance();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => MemoService()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -43,42 +52,49 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          TabBarView(
+    return Consumer<MemoService>(
+      builder: (context, memoService, child) {
+        List<Memo> memoList = memoService.memoList;
+
+        return Scaffold(
+          body: Stack(
             children: [
-              FirstTab(),
-              SecondTab(),
-              ThirdTab(),
-              FourthTab(),
-              FifthTab(),
-            ],
-          ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-              child: Column(
+              TabBarView(
                 children: [
-                  Container(
-                    alignment: Alignment.topCenter,
-                    child: TabPageSelector(
-                      color: DefaultTabController.of(context)?.index == 1
-                          ? Colors.black38
-                          : Colors.grey[400],
-                      selectedColor:
-                          DefaultTabController.of(context)?.index == 1
-                              ? Colors.white
-                              : Colors.black26,
-                      indicatorSize: 8,
-                    ),
-                  ),
+                  FirstTab(),
+                  SecondTab(),
+                  ThirdTab(),
+                  FourthTab(),
+                  FifthTab(),
                 ],
               ),
-            ),
+              SafeArea(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.topCenter,
+                        child: TabPageSelector(
+                          color: DefaultTabController.of(context)?.index == 1
+                              ? Colors.black38
+                              : Colors.grey[400],
+                          selectedColor:
+                              DefaultTabController.of(context)?.index == 1
+                                  ? Colors.white
+                                  : Colors.black26,
+                          indicatorSize: 8,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
