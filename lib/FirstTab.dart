@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:team7_work/main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:team7_work/SecondTap.dart';
+import 'package:team7_work/SecondTab.dart';
 import 'package:team7_work/ThirdTab.dart';
 import 'package:team7_work/FourthTab.dart';
 import 'package:team7_work/FifthTab.dart';
