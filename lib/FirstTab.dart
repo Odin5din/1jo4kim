@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:team7_work/main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:team7_work/SecondTap.dart';
 import 'package:team7_work/ThirdTab.dart';
 import 'package:team7_work/FourthTab.dart';
@@ -26,31 +27,30 @@ class FirstTab extends StatelessWidget {
                 height: 100,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'images/gitlogo.png',
-                    width: 100,
-                    height: 100,
-                  ),
                   Spacer(),
                   Column(
                     children: [
                       Text(
-                        'Hi,Github!',
+                        'Introduce Our Team!',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 23,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Text(
-                        'welcome',
+                        'This is me',
                         style: TextStyle(
-                            color: Color.fromARGB(255, 165, 164, 164),
-                            fontSize: 25),
+                          fontFamily: 'RubikDirt',
+                          color: Color.fromARGB(255, 165, 164, 164),
+                          fontSize: 23,
+                        ),
                       ),
                     ],
                   ),
+                  Spacer(),
                 ],
               ),
               SizedBox(
@@ -58,14 +58,15 @@ class FirstTab extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: Color(0xFF1F2123),
-                    borderRadius: BorderRadius.circular(20)),
+                  color: Color(0xff9C74ED),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
-                        Icons.face_2,
+                        Icons.face_sharp,
                         size: 80,
                         color: Colors.white,
                       ),
@@ -73,52 +74,37 @@ class FirstTab extends StatelessWidget {
                     SizedBox(
                       width: 20,
                     ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SecondTab(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'JiGyeon',
+                        style: TextStyle(
+                          fontFamily: 'ArchitectsDaughter',
+                          color: Colors.black87,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
+              SizedBox(height: 20),
               Transform.translate(
+                // 두 번째 타일
                 offset: Offset(0, -20),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 243, 245, 247),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_3,
-                          size: 80,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SecondTab(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Seul Bi',
-                          style: TextStyle(color: Colors.black87, fontSize: 30),
-                        ),
-                      ),
-                    ],
+                    color: Color.fromARGB(255, 243, 245, 247),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                ),
-              ),
-              Transform.translate(
-                offset: Offset(0, -40),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 141, 190, 235),
-                      borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
                       Padding(
@@ -126,44 +112,7 @@ class FirstTab extends StatelessWidget {
                         child: Icon(
                           Icons.face_6,
                           size: 80,
-                          color: Color.fromARGB(255, 46, 44, 44),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FourthTab(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'ji Gyeon',
-                          style: TextStyle(color: Colors.black87, fontSize: 30),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Transform.translate(
-                offset: Offset(0, -60),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 247, 248, 163),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_5,
-                          size: 80,
-                          color: const Color.fromARGB(255, 61, 45, 45),
+                          color: Colors.black,
                         ),
                       ),
                       SizedBox(
@@ -179,22 +128,73 @@ class FirstTab extends StatelessWidget {
                           );
                         },
                         child: Text(
-                          'Min Woo',
+                          'HyunJun',
                           style: TextStyle(
-                              color: Color.fromARGB(255, 21, 21, 22),
-                              fontSize: 30),
+                            fontFamily: 'ArchitectsDaughter',
+                            color: Colors.black87,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
+              SizedBox(height: 20),
               Transform.translate(
-                offset: Offset(0, -800),
+                // 세 번째 타일
+                offset: Offset(0, -40),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 247, 248, 163),
-                      borderRadius: BorderRadius.circular(20)),
+                    color: Color(0xff7AAAE6),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.face_3,
+                          size: 80,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FourthTab(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'MinJi',
+                          style: TextStyle(
+                            fontFamily: 'ArchitectsDaughter',
+                            color: Colors.black87,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Transform.translate(
+                // 네 번째 타일
+                offset: Offset(0, -60),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 243, 245, 247),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: Row(
                     children: [
                       Padding(
@@ -202,7 +202,7 @@ class FirstTab extends StatelessWidget {
                         child: Icon(
                           Icons.face_5,
                           size: 80,
-                          color: const Color.fromARGB(255, 61, 45, 45),
+                          color: const Color.fromARGB(255, 10, 9, 10),
                         ),
                       ),
                       SizedBox(
@@ -218,10 +218,13 @@ class FirstTab extends StatelessWidget {
                           );
                         },
                         child: Text(
-                          'sdsas',
+                          'MinJun',
                           style: TextStyle(
-                              color: Color.fromARGB(255, 21, 21, 22),
-                              fontSize: 30),
+                            fontFamily: 'ArchitectsDaughter',
+                            color: Color.fromARGB(255, 21, 21, 22),
+                            fontSize: 25,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ],
