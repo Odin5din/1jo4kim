@@ -8,6 +8,10 @@ import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/FourthTab.dart';
 import 'package:team7_work/FifthTab.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+late SharedPreferences prefs;
 
 void main() {
   runApp(MyApp());
@@ -19,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         initialIndex: 0,

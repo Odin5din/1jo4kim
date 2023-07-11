@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:team7_work/FirstTab.dart';
+import 'package:team7_work/main.dart';
+import 'package:team7_work/SecondTap.dart';
 import 'package:team7_work/ThirdTab.dart';
-import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/FourthTab.dart';
 import 'package:team7_work/FifthTab.dart';
 
@@ -100,7 +100,7 @@ class FirstTab extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FirstTab(),
+                              builder: (context) => SecondTab(),
                             ),
                           );
                         },
@@ -180,6 +180,45 @@ class FirstTab extends StatelessWidget {
                         },
                         child: Text(
                           'Min Woo',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 21, 21, 22),
+                              fontSize: 30),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(0, -800),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 247, 248, 163),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.face_5,
+                          size: 80,
+                          color: const Color.fromARGB(255, 61, 45, 45),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FifthTab(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'sdsas',
                           style: TextStyle(
                               color: Color.fromARGB(255, 21, 21, 22),
                               fontSize: 30),
