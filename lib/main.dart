@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'dart:convert';
 import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/SecondTab.dart';
 import 'package:team7_work/ThirdTab.dart';
-import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/FourthTab.dart';
 import 'package:team7_work/FifthTab.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'memo_service.dart';
