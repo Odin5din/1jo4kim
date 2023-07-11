@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
 import 'package:team7_work/FirstTab.dart';
-import 'package:team7_work/SecondTap.dart';
+import 'package:team7_work/SecondTab.dart';
 import 'package:team7_work/ThirdTab.dart';
 import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/FourthTab.dart';
@@ -10,6 +10,7 @@ import 'package:team7_work/FifthTab.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'memo_service.dart';
 
 late SharedPreferences prefs;
 
@@ -76,16 +77,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Container(
                         alignment: Alignment.topCenter,
-                        child: TabPageSelector(
-                          color: DefaultTabController.of(context)?.index == 1
-                              ? Colors.black38
-                              : Colors.grey[400],
-                          selectedColor:
-                              DefaultTabController.of(context)?.index == 1
-                                  ? Colors.white
-                                  : Colors.black26,
-                          indicatorSize: 8,
-                        ),
+                        child: TabPage(),
                       ),
                     ],
                   ),
@@ -95,6 +87,28 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },
+    );
+  }
+}
+
+class TabPage extends StatefulWidget {
+  const TabPage({super.key});
+
+  @override
+  State<TabPage> createState() => _TabPageState();
+}
+
+class _TabPageState extends State<TabPage> {
+  @override
+  Widget build(BuildContext context) {
+    return TabPageSelector(
+      color: DefaultTabController.of(context).index == 1
+          ? Colors.black38
+          : Colors.grey[400],
+      selectedColor: DefaultTabController.of(context).index == 1
+          ? Colors.white
+          : Colors.black26,
+      indicatorSize: 8,
     );
   }
 }

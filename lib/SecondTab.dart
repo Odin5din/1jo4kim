@@ -9,14 +9,14 @@ import 'main.dart';
 import 'FirstTab.dart';
 import 'memo_service.dart';
 
-class ThirdTab extends StatefulWidget {
-  const ThirdTab({Key? key}) : super(key: key);
+class SecondTab extends StatefulWidget {
+  const SecondTab({Key? key}) : super(key: key);
 
   @override
-  _ThirdTabState createState() => _ThirdTabState();
+  _SecondTabState createState() => _SecondTabState();
 }
 
-class _ThirdTabState extends State<ThirdTab> {
+class _SecondTabState extends State<SecondTab> {
   @override
   Widget build(BuildContext context) {
     return Consumer<MemoService>(
@@ -34,7 +34,7 @@ class _ThirdTabState extends State<ThirdTab> {
                   children: [
                     // 이미지 경로 설정
                     Text(
-                      '김현준',
+                      '김지견',
                       style: TextStyle(
                         color: Colors.black,
                       ),
