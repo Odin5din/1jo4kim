@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:team7_work/SecondTab.dart';
-import 'package:team7_work/ThirdTab.dart';
-import 'package:team7_work/FourthTab.dart';
-import 'package:team7_work/FifthTab.dart';
+import 'SecondTab.dart';
+import 'ThirdTab.dart';
+import 'FourthTab.dart';
+import 'FifthTab.dart';
 
 class FirstTab extends StatelessWidget {
   FirstTab({Key? key}) : super(key: key);
