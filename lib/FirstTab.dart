@@ -42,7 +42,7 @@ class FirstTab extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '4kim / This is me',
+                        'This is me',
                         style: TextStyle(
                             color: Color.fromARGB(255, 165, 164, 164),
                             fontSize: 16),
@@ -62,8 +62,8 @@ class FirstTab extends StatelessWidget {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      backgroundImage: AssetImage(
-                          'assets/fonts/images/4BC877F9-189E-44C9-A012-6CC4EB15E2AB_1_105_c.jpeg'),
+                      backgroundImage:
+                          AssetImage('assets/fonts/images/pepe.png'),
                       radius: 50,
                     ),
                     SizedBox(
@@ -101,7 +101,7 @@ class FirstTab extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage: AssetImage(
-                            'assets/fonts/images/C4BED5C0-3A74-488C-97D5-C8E2A4B2AD96_1_105_c.jpeg'),
+                            'assets/fonts/images/E4268D0C-615F-4BA9-B6AB-E6EB0B7D0E18_1_105_c.jpeg'),
                         radius: 50,
                       ),
                       SizedBox(
@@ -179,7 +179,7 @@ class FirstTab extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundImage:
-                            AssetImage('assets/fonts/images/IMG_2263.jpeg'),
+                            AssetImage('assets/fonts/images/mycode.gif'),
                         radius: 50,
                       ),
                       SizedBox(
