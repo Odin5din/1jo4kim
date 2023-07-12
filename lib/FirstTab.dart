@@ -14,7 +14,8 @@ class FirstTab extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          decoration: const BoxDecoration(color: Color(0xff050521)), // 내용 영역을 흰색으로 설정
+          decoration:
+              const BoxDecoration(color: Color(0xff050521)), // 내용 영역을 흰색으로 설정
           child: ListView(
             children: [
               const SizedBox(
@@ -58,7 +59,7 @@ class FirstTab extends StatelessWidget {
                 child: Row(
                   children: [
                     const CircleAvatar(
-                      backgroundImage: AssetImage('assetsimagespepe_480.png'),
+                      backgroundImage: AssetImage('assets/images/pepe_480.png'),
                       radius: 50,
                     ),
                     const SizedBox(
@@ -97,8 +98,8 @@ class FirstTab extends StatelessWidget {
                   child: Row(
                     children: [
                       const CircleAvatar(
-                        backgroundImage: AssetImage(
-                            'assetsimagese4268d0c-615f-4ba9-b6ab-e6eb0b7d0e18_1_105_c_720.jpg'),
+                        backgroundImage:
+                            AssetImage('assets/images/dog_240.jpg'),
                         radius: 50,
                       ),
                       const SizedBox(
@@ -138,8 +139,8 @@ class FirstTab extends StatelessWidget {
                   child: Row(
                     children: [
                       const CircleAvatar(
-                        backgroundImage: AssetImage(
-                            'assetsimages___________________________________________720.jpg'),
+                        backgroundImage:
+                            AssetImage('assets/images/piglet_720.jpg'),
                         radius: 50,
                       ),
                       const SizedBox(
@@ -180,7 +181,7 @@ class FirstTab extends StatelessWidget {
                     children: [
                       const CircleAvatar(
                         backgroundImage:
-                            AssetImage('assetsimagesmycode_360.gif'),
+                            AssetImage('assets/images/mycode_360.gif'),
                         radius: 50,
                       ),
                       const SizedBox(

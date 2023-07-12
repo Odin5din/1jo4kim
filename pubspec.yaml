@@ -63,10 +63,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets: 
-     - assets\images\pepe_480.png
-     - assets\images\mycode_360.gif
-     - assets\images\e4268d0c-615f-4ba9-b6ab-e6eb0b7d0e18_1_105_c_720.jpg
-     - assets\images\___________________________________________720.jpg
+     - assets/images/pepe_480.png
+     - assets/images/mycode_360.gif
+     - assets/images/dog_240.jpg
+     - assets/images/piglet_720.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -85,14 +85,14 @@ flutter:
 fonts:
   - family: RubikDirt
     fonts:
-    - asset: assets/fonts/RubikDirt-Regular.ttf
+      - asset: assets/font/RubikDirt-Regular.ttf
   - family: ArchitectsDaughter
     fonts:
-    - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
+      - asset: assets/font/ArchitectsDaughter-Regular.ttf
   - family: Rowdies
     fonts:
-    - asset: assets/fonts/Rowdies-Regular.ttf
-    - asset: assets/fonts/Rowdies-Bold.ttf
+      - asset: assets/font/Rowdies-Regular.ttf
+      - asset: assets/font/Rowdies-Bold.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
