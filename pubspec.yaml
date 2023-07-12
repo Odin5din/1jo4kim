@@ -67,6 +67,7 @@ flutter:
     - assets/fonts/images/E4268D0C-615F-4BA9-B6AB-E6EB0B7D0E18_1_105_c.jpeg
     - assets/fonts/images/pepe.png
     - assets/fonts/images/mycode.gif
+    - assets/fonts/images/다운로드파일.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

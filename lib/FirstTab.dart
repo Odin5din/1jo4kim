@@ -139,8 +139,8 @@ class FirstTab extends StatelessWidget {
                   child: Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage(
-                            'assets/fonts/images/E4268D0C-615F-4BA9-B6AB-E6EB0B7D0E18_1_105_c.jpeg'),
+                        backgroundImage:
+                            AssetImage('assets/fonts/images/다운로드파일.jpg'),
                         radius: 50,
                       ),
                       SizedBox(
