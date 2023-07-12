@@ -28,7 +28,7 @@ class _FifthTabState extends State<FifthTab> {
                 child: Column(
                   children: [
                     // 이미지 경로 설정
-                    Text(
+                    const Text(
                       '김민준',
                       style: TextStyle(
                         color: Colors.black,
@@ -38,7 +38,7 @@ class _FifthTabState extends State<FifthTab> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: memo5List.isEmpty
-                          ? Center(
+                          ? const Center(
                               child: Text("입력된 메모가 없습니다."),
                             )
                           : Column(
@@ -55,7 +55,7 @@ class _FifthTabState extends State<FifthTab> {
                                           memo5.content,
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.black,
                                           ),
                                         ),
@@ -81,7 +81,7 @@ class _FifthTabState extends State<FifthTab> {
               ),
             ),
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.edit),
+              child: const Icon(Icons.edit),
               onPressed: () {
                 memo5Service.createMemo5(content: '');
                 Navigator.push(
@@ -123,13 +123,13 @@ class DetailPage extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text("정말로 삭제하시겠습니까?"),
+                    title: const Text("정말로 삭제하시겠습니까?"),
                     actions: [
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text("취소"),
+                        child: const Text("취소"),
                       ),
                       TextButton(
                         onPressed: () {
@@ -137,7 +137,7 @@ class DetailPage extends StatelessWidget {
                           Navigator.pop(context);
                           Navigator.pop(context);
                         },
-                        child: Text(
+                        child: const Text(
                           "확인",
                           style: TextStyle(color: Colors.pink),
                         ),
@@ -147,7 +147,7 @@ class DetailPage extends StatelessWidget {
                 },
               );
             },
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
           )
         ],
       ),
@@ -155,7 +155,7 @@ class DetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: TextField(
           controller: contentController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: "메모를 입력하세요",
             border: InputBorder.none,
           ),

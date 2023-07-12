@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          TabBarView(
+          const TabBarView(
             children: [
               FirstTab(),
               SecondTab(),
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Container(
                     alignment: Alignment.topCenter,
-                    child: TabPage(),
+                    child: const TabPage(),
                   ),
                 ],
               ),
