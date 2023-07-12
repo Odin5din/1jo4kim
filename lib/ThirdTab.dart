@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'memo_service.dart';
+import 'dart:convert';
+
+import 'main.dart';
 
 class ThirdTab extends StatefulWidget {
   const ThirdTab({Key? key}) : super(key: key);
@@ -13,9 +14,9 @@ class ThirdTab extends StatefulWidget {
 class _ThirdTabState extends State<ThirdTab> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<MemoService>(
-      builder: (context, memoService, child) {
-        List<Memo> memoList = memoService.memoList;
+    return Consumer<Memo3Service>(
+      builder: (context, memo3Service, child) {
+        List<Memo3> memo3List = memo3Service.memo3List;
 
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -33,54 +34,10 @@ class _ThirdTabState extends State<ThirdTab> {
                         color: Colors.black,
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text("수정"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: memoList.isEmpty
+                      child: memo3List.isEmpty
                           ? Center(
                               child: Text("입력된 메모가 없습니다."),
                             )
@@ -88,14 +45,14 @@ class _ThirdTabState extends State<ThirdTab> {
                               children: [
                                 ListView.builder(
                                   shrinkWrap: true,
-                                  itemCount: memoList.length,
+                                  itemCount: memo3List.length,
                                   itemBuilder: (context, index) {
-                                    Memo memo = memoList[index];
+                                    Memo3 memo3 = memo3List[index];
                                     return Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: ListTile(
                                         title: Text(
-                                          memo.content,
+                                          memo3.content,
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
@@ -126,12 +83,12 @@ class _ThirdTabState extends State<ThirdTab> {
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.edit),
               onPressed: () {
-                memoService.createMemo(content: '');
+                memo3Service.createMemo3(content: '');
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) =>
-                        DetailPage(index: memoService.memoList.length - 1),
+                        DetailPage(index: memo3Service.memo3List.length - 1),
                   ),
                 );
               },
@@ -140,5 +97,143 @@ class _ThirdTabState extends State<ThirdTab> {
         );
       },
     );
+  }
+}
+
+class DetailPage extends StatelessWidget {
+  DetailPage({super.key, required this.index});
+
+  final int index;
+
+  TextEditingController contentController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    Memo3Service memo3Service = context.read<Memo3Service>();
+    Memo3 memo3 = memo3Service.memo3List[index];
+
+    contentController.text = memo3.content;
+
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("정말로 삭제하시겠습니까?"),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("취소"),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          memo3Service.deleteMemo3(index: index);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          "확인",
+                          style: TextStyle(color: Colors.pink),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            icon: Icon(Icons.delete),
+          )
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: TextField(
+          controller: contentController,
+          decoration: InputDecoration(
+            hintText: "메모를 입력하세요",
+            border: InputBorder.none,
+          ),
+          autofocus: true,
+          maxLines: null,
+          expands: true,
+          keyboardType: TextInputType.multiline,
+          onChanged: (value) {
+            memo3Service.updateMemo3(index: index, content: value);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class Memo3 {
+  Memo3({
+    required this.content,
+  });
+
+  String content;
+
+  Map toJson() {
+    return {'content': content};
+  }
+
+  factory Memo3.fromJson(json) {
+    return Memo3(content: json['content']);
+  }
+}
+
+class Memo3Service extends ChangeNotifier {
+  Memo3Service() {
+    loadMemo3List();
+  }
+
+  List<Memo3> memo3List = [];
+
+  createMemo3({required String content}) {
+    Memo3 memo3 = Memo3(content: content);
+    memo3List.add(memo3);
+    notifyListeners();
+    saveMemo3List(); // Consumer<MemoService>의 builder 부분을 호출해서 화면 새로고침
+  }
+
+  updateMemo3({required int index, required String content}) {
+    Memo3 memo3 = memo3List[index];
+    memo3.content = content;
+    notifyListeners();
+    saveMemo3List();
+  }
+
+  deleteMemo3({required int index}) {
+    memo3List.removeAt(index);
+    notifyListeners();
+    saveMemo3List();
+  }
+
+  saveMemo3List() {
+    List memo3JsonList = memo3List.map((memo3) => memo3.toJson()).toList();
+    // [{"content": "1"}, {"content": "2"}]
+
+    String jsonString = jsonEncode(memo3JsonList);
+    // '[{"content": "1"}, {"content": "2"}]'
+
+    prefs.setString('memo3List', jsonString);
+  }
+
+  loadMemo3List() {
+    String? jsonString = prefs.getString('memo3List');
+    // '[{"content": "1"}, {"content": "2"}]'
+
+    if (jsonString == null) return; // null 이면 로드하지 않음
+
+    List memo3JsonList = jsonDecode(jsonString);
+    // [{"content": "1"}, {"content": "2"}]
+
+    memo3List = memo3JsonList.map((json) => Memo3.fromJson(json)).toList();
   }
 }

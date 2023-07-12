@@ -6,7 +6,6 @@ import 'FourthTab.dart';
 import 'FifthTab.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'memo_service.dart';
 
 late SharedPreferences prefs;
 
@@ -16,7 +15,10 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => MemoService()),
+        ChangeNotifierProvider(create: (context) => Memo4Service()),
+        ChangeNotifierProvider(create: (context) => Memo5Service()),
+        ChangeNotifierProvider(create: (context) => Memo3Service()),
+        ChangeNotifierProvider(create: (context) => Memo2Service()),
       ],
       child: const MyApp(),
     ),
@@ -49,40 +51,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<MemoService>(
-      builder: (context, memoService, child) {
-        List<Memo> memoList = memoService.memoList;
-
-        return Scaffold(
-          body: Stack(
+    return Scaffold(
+      body: Stack(
+        children: [
+          TabBarView(
             children: [
-              TabBarView(
-                children: [
-                  FirstTab(),
-                  SecondTab(),
-                  ThirdTab(),
-                  FourthTab(),
-                  FifthTab(),
-                ],
-              ),
-              SafeArea(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-                  child: Column(
-                    children: [
-                      Container(
-                        alignment: Alignment.topCenter,
-                        child: TabPage(),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              FirstTab(),
+              SecondTab(),
+              ThirdTab(),
+              FourthTab(),
+              FifthTab(),
             ],
           ),
-        );
-      },
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.topCenter,
+                    child: TabPage(),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
