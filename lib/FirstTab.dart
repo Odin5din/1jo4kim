@@ -3,6 +3,7 @@ import 'SecondTab.dart';
 import 'ThirdTab.dart';
 import 'FourthTab.dart';
 import 'FifthTab.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FirstTab extends StatelessWidget {
   FirstTab({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class FirstTab extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          decoration: BoxDecoration(color: Colors.black), // 내용 영역을 흰색으로 설정
+          decoration: BoxDecoration(color: Color(0xff050521)), // 내용 영역을 흰색으로 설정
           child: ListView(
             children: [
               SizedBox(
@@ -30,7 +31,7 @@ class FirstTab extends StatelessWidget {
                         'Introduce Our Team!',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 23,
+                          fontSize: 35,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -39,7 +40,7 @@ class FirstTab extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'RubikDirt',
                           color: Color.fromARGB(255, 165, 164, 164),
-                          fontSize: 23,
+                          fontSize: 16,
                         ),
                       ),
                     ],
@@ -48,7 +49,7 @@ class FirstTab extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 120,
+                height: 100,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -57,13 +58,9 @@ class FirstTab extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.face_sharp,
-                        size: 80,
-                        color: Colors.white,
-                      ),
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets\images\pepe_480.png'),
+                      radius: 50,
                     ),
                     SizedBox(
                       width: 20,
@@ -90,10 +87,9 @@ class FirstTab extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 두 번째 타일
-                offset: Offset(0, -20),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 243, 245, 247),
@@ -101,13 +97,10 @@ class FirstTab extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_6,
-                          size: 80,
-                          color: Colors.black,
-                        ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets\images\e4268d0c-615f-4ba9-b6ab-e6eb0b7d0e18_1_105_c_720.jpg'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
@@ -135,10 +128,9 @@ class FirstTab extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 세 번째 타일
-                offset: Offset(0, -40),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Color(0xff7AAAE6),
@@ -146,13 +138,10 @@ class FirstTab extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_3,
-                          size: 80,
-                          color: Colors.white,
-                        ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets\images\___________________________________________720.jpg'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
@@ -180,10 +169,9 @@ class FirstTab extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 네 번째 타일
-                offset: Offset(0, -60),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 243, 245, 247),
@@ -191,13 +179,10 @@ class FirstTab extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_5,
-                          size: 80,
-                          color: const Color.fromARGB(255, 10, 9, 10),
-                        ),
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets\images\mycode_360.gif'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
