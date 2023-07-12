@@ -34,50 +34,6 @@ class _FifthTabState extends State<FifthTab> {
                         color: Colors.black,
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text("수정"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text("강점"),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 24),
-                            child: TextField(),
-                          ),
-                        ),
-                      ],
-                    ),
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
