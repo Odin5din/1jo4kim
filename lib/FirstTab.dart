@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:team7_work/FirstTab.dart';
 import 'package:team7_work/SecondTap.dart';
 import 'package:team7_work/ThirdTab.dart';
@@ -27,7 +28,7 @@ class FirstTab extends StatelessWidget {
                 height: 100,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Spacer(),
                   Column(
@@ -35,22 +36,23 @@ class FirstTab extends StatelessWidget {
                       Text(
                         'Introduce Our Team!',
                         style: TextStyle(
+                            fontFamily: 'Rowdies',
                             color: Colors.white,
-                            fontSize: 40,
+                            fontSize: 35,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'This is ME',
+                        '4kim / This is me',
                         style: TextStyle(
                             color: Color.fromARGB(255, 165, 164, 164),
-                            fontSize: 25),
+                            fontSize: 16),
                       ),
                     ],
                   ),
                 ],
               ),
               SizedBox(
-                height: 120,
+                height: 100,
               ),
               Container(
                 // 첫 번째 타일
@@ -59,13 +61,10 @@ class FirstTab extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20)),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.face_sharp,
-                        size: 80,
-                        color: Colors.white,
-                      ),
+                    CircleAvatar(
+                      backgroundImage: AssetImage(
+                          'assets/fonts/images/4BC877F9-189E-44C9-A012-6CC4EB15E2AB_1_105_c.jpeg'),
+                      radius: 50,
                     ),
                     SizedBox(
                       width: 20,
@@ -75,13 +74,14 @@ class FirstTab extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => FirstTab(),
+                            builder: (context) => SecondTab(),
                           ),
                         );
                       },
                       child: Text(
-                        "Ji Gyeon",
+                        "JiGyeon",
                         style: TextStyle(
+                            fontFamily: 'ArchitectsDaughter',
                             color: Colors.black87,
                             fontSize: 25,
                             fontWeight: FontWeight.w400),
@@ -92,20 +92,17 @@ class FirstTab extends StatelessWidget {
               ),
               Transform.translate(
                 // 두 번째 타일
-                offset: Offset(0, -20),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 243, 245, 247),
                       borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_6,
-                          size: 80,
-                          color: Colors.black,
-                        ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets/fonts/images/C4BED5C0-3A74-488C-97D5-C8E2A4B2AD96_1_105_c.jpeg'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
@@ -115,13 +112,14 @@ class FirstTab extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SecondTab(),
+                              builder: (context) => ThirdTab(),
                             ),
                           );
                         },
                         child: Text(
-                          'Hyun Jun',
+                          'HyunJun',
                           style: TextStyle(
+                              fontFamily: 'ArchitectsDaughter',
                               color: Colors.black87,
                               fontSize: 25,
                               fontWeight: FontWeight.w400),
@@ -133,20 +131,17 @@ class FirstTab extends StatelessWidget {
               ),
               Transform.translate(
                 // 세 번째 타일
-                offset: Offset(0, -40),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Color(0xff7AAAE6),
                       borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_3,
-                          size: 80,
-                          color: Colors.white,
-                        ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets/fonts/images/E4268D0C-615F-4BA9-B6AB-E6EB0B7D0E18_1_105_c.jpeg'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
@@ -163,6 +158,7 @@ class FirstTab extends StatelessWidget {
                         child: Text(
                           'MinJi ',
                           style: TextStyle(
+                              fontFamily: 'ArchitectsDaughter',
                               color: Colors.black87,
                               fontSize: 25,
                               fontWeight: FontWeight.w400),
@@ -174,20 +170,17 @@ class FirstTab extends StatelessWidget {
               ),
               Transform.translate(
                 // 네 번째 타일
-                offset: Offset(0, -60),
+                offset: Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Color.fromARGB(255, 243, 245, 247),
                       borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_5,
-                          size: 80,
-                          color: const Color.fromARGB(255, 10, 9, 10),
-                        ),
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/fonts/images/IMG_2263.jpeg'),
+                        radius: 50,
                       ),
                       SizedBox(
                         width: 20,
@@ -202,6 +195,7 @@ class FirstTab extends StatelessWidget {
                         child: Text(
                           'MinJun',
                           style: TextStyle(
+                              fontFamily: 'ArchitectsDaughter',
                               color: Color.fromARGB(255, 21, 21, 22),
                               fontSize: 25,
                               fontWeight: FontWeight.w400),
