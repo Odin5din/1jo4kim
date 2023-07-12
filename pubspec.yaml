@@ -54,7 +54,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-flutter:
+flutter: 
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -62,11 +62,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-   - assets\images\pepe_480.png
-   - assets\images\mycode_360.gif
-   - assets\images\e4268d0c-615f-4ba9-b6ab-e6eb0b7d0e18_1_105_c_720.jpg
-   - assets\images\___________________________________________720.jpg
+  assets: 
+     - assets\images\pepe_480.png
+     - assets\images\mycode_360.gif
+     - assets\images\e4268d0c-615f-4ba9-b6ab-e6eb0b7d0e18_1_105_c_720.jpg
+     - assets\images\___________________________________________720.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -82,12 +82,17 @@ flutter:
   # fonts:
   #   - family: Schyler
   #     fonts:
-  asset: 
-   - assets\fonts\Rowdies-Light.ttf
-   - assets\fonts\Rowdies-Regular.ttf
-   - assets\fonts\RubikDirt-Regular.ttf
-   - assets\fonts\ArchitectsDaughter-Regular.ttf
-   - assets\fonts\Rowdies-Bold.ttf
+fonts:
+  - family: RubikDirt
+    fonts:
+    - asset: assets/fonts/RubikDirt-Regular.ttf
+  - family: ArchitectsDaughter
+    fonts:
+    - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
+  - family: Rowdies
+    fonts:
+    - asset: assets/fonts/Rowdies-Regular.ttf
+    - asset: assets/fonts/Rowdies-Bold.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
