@@ -67,6 +67,7 @@ flutter:
      - assets/images/mycode_360.gif
      - assets/images/dog_240.jpg
      - assets/images/piglet_720.jpg
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -82,17 +83,30 @@ flutter:
   # fonts:
   #   - family: Schyler
   #     fonts:
+# fonts:
+#   - family: RubikDirt
+#     fonts:
+#       - asset: assets/font/RubikDirt-Regular.ttf
+#   - family: ArchitectsDaughter
+#     fonts:
+#       - asset: assets/font/ArchitectsDaughter-Regular.ttf
+#   - family: Rowdies
+#     fonts:
+#       - asset: assets/font/Rowdies-Regular.ttf
+#       - asset: assets/font/Rowdies-Bold.ttf
 fonts:
-  - family: RubikDirt
+  - family: Pretendard
     fonts:
-      - asset: assets/font/RubikDirt-Regular.ttf
-  - family: ArchitectsDaughter
-    fonts:
-      - asset: assets/font/ArchitectsDaughter-Regular.ttf
-  - family: Rowdies
-    fonts:
-      - asset: assets/font/Rowdies-Regular.ttf
-      - asset: assets/font/Rowdies-Bold.ttf
+      - asset: assets/font/Pretendard-Regular.otf
+        weight: 400
+      - asset: assets/font/Pretendard-Medium.otf
+        weight: 500
+      - asset: assets/font/Pretendard-SemiBold.otf
+        weight: 600
+      - asset: assets/font/Pretendard-Bold.otf
+        weight: 700
+      - asset: assets/font/Pretendard-ExtraBold.otf
+        weight: 800
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

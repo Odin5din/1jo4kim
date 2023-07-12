@@ -30,13 +30,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         initialIndex: 0,
         child: HomePage(),
       ),
+      theme: ThemeData(fontFamily: 'RubikDirt'),
     );
   }
 }

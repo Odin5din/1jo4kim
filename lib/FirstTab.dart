@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'SecondTab.dart';
 import 'ThirdTab.dart';
 import 'FourthTab.dart';
 import 'FifthTab.dart';
+import 'main.dart';
 
 class FirstTab extends StatelessWidget {
   const FirstTab({Key? key}) : super(key: key);
@@ -21,7 +23,7 @@ class FirstTab extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Spacer(),
@@ -37,10 +39,9 @@ class FirstTab extends StatelessWidget {
                       ),
                       Text(
                         'This is me',
-                        style: TextStyle(
-                          fontFamily: 'RubikDirt',
-                          color: Color.fromARGB(255, 165, 164, 164),
+                        style: GoogleFonts.rubikDirt(
                           fontSize: 16,
+                          color: Color.fromARGB(255, 165, 164, 164),
                         ),
                       ),
                     ],
@@ -58,7 +59,7 @@ class FirstTab extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       backgroundImage: AssetImage('assets/images/pepe_480.png'),
                       radius: 50,
                     ),
@@ -74,10 +75,9 @@ class FirstTab extends StatelessWidget {
                           ),
                         );
                       },
-                      child: const Text(
+                      child: Text(
                         'JiGyeon',
-                        style: TextStyle(
-                          fontFamily: 'ArchitectsDaughter',
+                        style: GoogleFonts.architectsDaughter(
                           color: Colors.black87,
                           fontSize: 25,
                           fontWeight: FontWeight.w400,
@@ -114,10 +114,9 @@ class FirstTab extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           'HyunJun',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
+                          style: GoogleFonts.architectsDaughter(
                             color: Colors.black87,
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
@@ -155,10 +154,9 @@ class FirstTab extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           'MinJi',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
+                          style: GoogleFonts.architectsDaughter(
                             color: Colors.black87,
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
@@ -174,7 +172,7 @@ class FirstTab extends StatelessWidget {
                 offset: const Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 243, 245, 247),
+                    color: Color.fromARGB(255, 14, 179, 55),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -196,10 +194,9 @@ class FirstTab extends StatelessWidget {
                             ),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           'MinJun',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
+                          style: GoogleFonts.architectsDaughter(
                             color: Color.fromARGB(255, 21, 21, 22),
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
