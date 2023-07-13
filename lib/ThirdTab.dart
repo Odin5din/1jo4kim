@@ -48,8 +48,8 @@ class _ThirdTabState extends State<ThirdTab> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        'https://cdn2.thecatapi.com/images/6bt.jpg',
+                      child: Image.asset(
+                        'assets/images/khj.jpg',
                         width: 170,
                         height: 170,
                         fit: BoxFit.cover,
@@ -94,18 +94,18 @@ class _ThirdTabState extends State<ThirdTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("책임감, 공감잘함(F가 90%)"),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
                           children: [
                             Text(
-                              "앞으로의 각오",
+                              "각오",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
-                            Text("끈기있는 엉덩이"),
+                            Text("잠은 죽어서 자겠다."),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -116,7 +116,7 @@ class _ThirdTabState extends State<ThirdTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("부딛쳐봐야 더 잘한다."),
                           ],
                         ),
                       ],
