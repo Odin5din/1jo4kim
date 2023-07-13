@@ -26,7 +26,7 @@ class _SecondTabState extends State<SecondTab> {
               backgroundColor: Colors.white,
               elevation: 0.7,
               centerTitle: true,
-              title: Text(
+              title: const Text(
                 'This is ME',
                 style: TextStyle(
                   fontSize: 27,
@@ -38,7 +38,7 @@ class _SecondTabState extends State<SecondTab> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back, color: Colors.grey),
+                icon: const Icon(Icons.arrow_back, color: Colors.grey),
               ),
             ),
             body: Padding(
@@ -55,26 +55,26 @@ class _SecondTabState extends State<SecondTab> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Text(
+                    const Text(
                       '김지견',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 35,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       '[34, INFP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       color: Colors.black,
                       thickness: 1,
                       height: 20,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Row(
                           children: [
@@ -137,10 +137,10 @@ class _SecondTabState extends State<SecondTab> {
                                     return Padding(
                                       padding: const EdgeInsets.all(16),
                                       child: ListTile(
-                                        tileColor:
-                                            Color.fromARGB(255, 244, 242, 242),
+                                        tileColor: const Color.fromARGB(
+                                            255, 244, 242, 242),
                                         trailing: IconButton(
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.delete,
                                             color: Colors.pink,
                                           ),
@@ -148,7 +148,7 @@ class _SecondTabState extends State<SecondTab> {
                                             showDeleteDialog(context, index);
                                           },
                                         ),
-                                        title: Text("댓글"),
+                                        title: const Text("댓글"),
                                         subtitle: Text(
                                           memo2.content,
                                           maxLines: 3,
@@ -202,7 +202,7 @@ class _SecondTabState extends State<SecondTab> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("정말로 삭제하시겠습니까?"),
+          title: const Text("정말로 삭제하시겠습니까?"),
           actions: [
             TextButton(
               onPressed: () {
@@ -210,7 +210,7 @@ class _SecondTabState extends State<SecondTab> {
                     .deleteMemo2(index: index);
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 "확인",
                 style: TextStyle(color: Colors.blue),
               ),
@@ -220,7 +220,7 @@ class _SecondTabState extends State<SecondTab> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 "취소",
                 style: TextStyle(color: Colors.pink),
               ),

@@ -26,10 +26,10 @@ class FirstTab extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Introduce Our Team!',
                         style: TextStyle(
                           color: Colors.white,
@@ -41,12 +41,12 @@ class FirstTab extends StatelessWidget {
                         'This is me',
                         style: GoogleFonts.rubikDirt(
                           fontSize: 16,
-                          color: Color.fromARGB(255, 165, 164, 164),
+                          color: const Color.fromARGB(255, 165, 164, 164),
                         ),
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
               const SizedBox(
@@ -59,7 +59,7 @@ class FirstTab extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/pepe_480.png'),
                       radius: 50,
                     ),
@@ -172,7 +172,7 @@ class FirstTab extends StatelessWidget {
                 offset: const Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 14, 179, 55),
+                    color: const Color.fromARGB(255, 14, 179, 55),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -197,7 +197,7 @@ class FirstTab extends StatelessWidget {
                         child: Text(
                           'MinJun',
                           style: GoogleFonts.architectsDaughter(
-                            color: Color.fromARGB(255, 21, 21, 22),
+                            color: const Color.fromARGB(255, 21, 21, 22),
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
                           ),
