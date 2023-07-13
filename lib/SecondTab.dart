@@ -119,6 +119,16 @@ class _SecondTabState extends State<SecondTab> {
                             Text("아직 멀었다."),
                           ],
                         ),
+                        Row(
+                          children: [
+                            Text(
+                              "목표",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("1인 개발자"),
+                          ],
+                        ),
                       ],
                     ),
                     const Divider(
