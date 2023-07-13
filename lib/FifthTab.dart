@@ -81,7 +81,7 @@ class _FifthTabState extends State<FifthTab> {
                           children: [
                             Text(
                               "블로그 주소",
-                              style: TextStyle(color: Colors.brown),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
                             Text("https://velog.io/@thundevistan"),
@@ -92,6 +92,7 @@ class _FifthTabState extends State<FifthTab> {
                           children: [
                             Text(
                               "강점",
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
@@ -100,7 +101,10 @@ class _FifthTabState extends State<FifthTab> {
                         SizedBox(height: 20),
                         Row(
                           children: [
-                            Text("앞으로의 각오"),
+                            Text(
+                              "앞으로의 각오",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             SizedBox(width: 10),
                             Text("끈기있는 엉덩이"),
                           ],
@@ -108,7 +112,10 @@ class _FifthTabState extends State<FifthTab> {
                         SizedBox(height: 20),
                         Row(
                           children: [
-                            Text("느낀점"),
+                            Text(
+                              "느낀점",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
