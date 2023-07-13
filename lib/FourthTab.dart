@@ -63,7 +63,7 @@ class _FourthTabState extends State<FourthTab> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[29,ISTJ]',
+                      '[29, ISTJ]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -79,8 +79,8 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("블로그 주소"),
-                            SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            SizedBox(width: 10),
+                            Text("https://brunch.co.kr/@2245edea227e49b"),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -95,7 +95,7 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("앞으로의 각오"),
-                            SizedBox(width: 15),
+                            SizedBox(width: 10),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),

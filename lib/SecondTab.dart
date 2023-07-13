@@ -56,14 +56,14 @@ class _SecondTabState extends State<SecondTab> {
                       ),
                     ),
                     Text(
-                      '김민지',
+                      '김지견',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 35,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[29,ISTJ]',
+                      '[34,INFP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -79,8 +79,8 @@ class _SecondTabState extends State<SecondTab> {
                         Row(
                           children: [
                             Text("블로그 주소"),
-                            SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            SizedBox(width: 10),
+                            Text("https://odin5din.tistory.com/"),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -95,7 +95,7 @@ class _SecondTabState extends State<SecondTab> {
                         Row(
                           children: [
                             Text("앞으로의 각오"),
-                            SizedBox(width: 15),
+                            SizedBox(width: 10),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),
