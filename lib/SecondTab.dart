@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'main.dart';
 
@@ -23,23 +22,114 @@ class _SecondTabState extends State<SecondTab> {
           padding: const EdgeInsets.all(8.0),
           child: Scaffold(
             backgroundColor: Colors.white,
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.7,
+              centerTitle: true,
+              title: const Text(
+                'This is ME',
+                style: TextStyle(
+                  fontSize: 27,
+                  color: Color.fromARGB(255, 45, 45, 45),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back, color: Colors.grey),
+              ),
+            ),
             body: Padding(
               padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    // 이미지 경로 설정
-                    Text(
-                      '김지견',
-                      style: TextStyle(
-                        color: Colors.black,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        'assets/images/kjk.jpg',
+                        width: 170,
+                        height: 170,
+                        fit: BoxFit.cover,
                       ),
                     ),
-
+                    const Text(
+                      '김지견',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const Text(
+                      '[34, INFP]',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
+                    ),
+                    const Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "블로그",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 10),
+                            Text("https://odin5din.tistory.com/"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "강점",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("내세울 만한 점이 없다."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "각오",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 10),
+                            Text("말이 아닌 행동으로 열심히 하겠습니다."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "느낀점",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("아직 멀었다."),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(1),
                       child: memo2List.isEmpty
-                          ? Center(
+                          ? const Center(
                               child: Text("입력된 메모가 없습니다."),
                             )
                           : Column(
@@ -50,13 +140,28 @@ class _SecondTabState extends State<SecondTab> {
                                   itemBuilder: (context, index) {
                                     Memo2 memo2 = memo2List[index];
                                     return Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 0,
+                                      ),
                                       child: ListTile(
-                                        title: Text(
+                                        tileColor: const Color.fromARGB(
+                                            255, 244, 242, 242),
+                                        trailing: IconButton(
+                                          icon: const Icon(
+                                            Icons.delete,
+                                            color: Colors.pink,
+                                          ),
+                                          onPressed: () {
+                                            showDeleteDialog(context, index);
+                                          },
+                                        ),
+                                        title: const Text("댓글"),
+                                        subtitle: Text(
                                           memo2.content,
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.black,
                                           ),
                                         ),
@@ -82,7 +187,7 @@ class _SecondTabState extends State<SecondTab> {
               ),
             ),
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.edit),
+              child: const Icon(Icons.edit),
               onPressed: () {
                 memo2Service.createMemo2(content: '');
                 Navigator.push(
@@ -95,6 +200,40 @@ class _SecondTabState extends State<SecondTab> {
               },
             ),
           ),
+        );
+      },
+    );
+  }
+
+  void showDeleteDialog(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("정말로 삭제하시겠습니까?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Provider.of<Memo2Service>(context, listen: false)
+                    .deleteMemo2(index: index);
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "확인",
+                style: TextStyle(color: Colors.blue),
+              ),
+            ),
+            // 취소 버튼
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "취소",
+                style: TextStyle(color: Colors.pink),
+              ),
+            ),
+          ],
         );
       },
     );
@@ -124,13 +263,13 @@ class DetailPage extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text("정말로 삭제하시겠습니까?"),
+                    title: const Text("정말로 삭제하시겠습니까?"),
                     actions: [
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text("취소"),
+                        child: const Text("취소"),
                       ),
                       TextButton(
                         onPressed: () {
@@ -138,7 +277,7 @@ class DetailPage extends StatelessWidget {
                           Navigator.pop(context);
                           Navigator.pop(context);
                         },
-                        child: Text(
+                        child: const Text(
                           "확인",
                           style: TextStyle(color: Colors.pink),
                         ),
@@ -148,7 +287,7 @@ class DetailPage extends StatelessWidget {
                 },
               );
             },
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
           )
         ],
       ),
@@ -156,7 +295,7 @@ class DetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: TextField(
           controller: contentController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: "메모를 입력하세요",
             border: InputBorder.none,
           ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'SecondTab.dart';
 import 'ThirdTab.dart';
 import 'FourthTab.dart';
 import 'FifthTab.dart';
+import 'main.dart';
 
 class FirstTab extends StatelessWidget {
-  FirstTab({Key? key}) : super(key: key);
+  const FirstTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,58 +16,54 @@ class FirstTab extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          decoration: BoxDecoration(color: Colors.black), // 내용 영역을 흰색으로 설정
+          decoration:
+              const BoxDecoration(color: Color(0xff050521)), // 내용 영역을 흰색으로 설정
           child: ListView(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Introduce Our Team!',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 23,
+                          fontSize: 35,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         'This is me',
-                        style: TextStyle(
-                          fontFamily: 'RubikDirt',
-                          color: Color.fromARGB(255, 165, 164, 164),
-                          fontSize: 23,
+                        style: GoogleFonts.rubikDirt(
+                          fontSize: 16,
+                          color: const Color.fromARGB(255, 165, 164, 164),
                         ),
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
-              SizedBox(
-                height: 120,
+              const SizedBox(
+                height: 100,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xff9C74ED),
+                  color: const Color(0xff9C74ED),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.face_sharp,
-                        size: 80,
-                        color: Colors.white,
-                      ),
+                    const CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/pepe_480.png'),
+                      radius: 50,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     InkWell(
@@ -73,14 +71,13 @@ class FirstTab extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SecondTab(),
+                            builder: (context) => const SecondTab(),
                           ),
                         );
                       },
                       child: Text(
                         'JiGyeon',
-                        style: TextStyle(
-                          fontFamily: 'ArchitectsDaughter',
+                        style: GoogleFonts.architectsDaughter(
                           color: Colors.black87,
                           fontSize: 25,
                           fontWeight: FontWeight.w400,
@@ -90,26 +87,22 @@ class FirstTab extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 두 번째 타일
-                offset: Offset(0, -20),
+                offset: const Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 243, 245, 247),
+                    color: const Color.fromARGB(255, 243, 245, 247),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_6,
-                          size: 80,
-                          color: Colors.black,
-                        ),
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/dog_240.jpg'),
+                        radius: 50,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       InkWell(
@@ -117,14 +110,13 @@ class FirstTab extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ThirdTab(),
+                              builder: (context) => const ThirdTab(),
                             ),
                           );
                         },
                         child: Text(
                           'HyunJun',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
+                          style: GoogleFonts.architectsDaughter(
                             color: Colors.black87,
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
@@ -135,26 +127,22 @@ class FirstTab extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 세 번째 타일
-                offset: Offset(0, -40),
+                offset: const Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color(0xff7AAAE6),
+                    color: const Color(0xff7AAAE6),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_3,
-                          size: 80,
-                          color: Colors.white,
-                        ),
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/piglet_720.jpg'),
+                        radius: 50,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       InkWell(
@@ -162,14 +150,13 @@ class FirstTab extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FourthTab(),
+                              builder: (context) => const FourthTab(),
                             ),
                           );
                         },
                         child: Text(
                           'MinJi',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
+                          style: GoogleFonts.architectsDaughter(
                             color: Colors.black87,
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
@@ -180,26 +167,22 @@ class FirstTab extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
               Transform.translate(
                 // 네 번째 타일
-                offset: Offset(0, -60),
+                offset: const Offset(0, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 243, 245, 247),
+                    color: const Color.fromARGB(255, 14, 179, 55),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.face_5,
-                          size: 80,
-                          color: const Color.fromARGB(255, 10, 9, 10),
-                        ),
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/mycode_360.gif'),
+                        radius: 50,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       InkWell(
@@ -207,15 +190,14 @@ class FirstTab extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FifthTab(),
+                              builder: (context) => const FifthTab(),
                             ),
                           );
                         },
                         child: Text(
                           'MinJun',
-                          style: TextStyle(
-                            fontFamily: 'ArchitectsDaughter',
-                            color: Color.fromARGB(255, 21, 21, 22),
+                          style: GoogleFonts.architectsDaughter(
+                            color: const Color.fromARGB(255, 21, 21, 22),
                             fontSize: 25,
                             fontWeight: FontWeight.w400,
                           ),
