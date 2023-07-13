@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'main.dart';
 
@@ -27,7 +26,7 @@ class _FifthTabState extends State<FifthTab> {
               backgroundColor: Colors.white,
               elevation: 0.7,
               centerTitle: true,
-              title: Text(
+              title: const Text(
                 'This is ME',
                 style: TextStyle(
                   fontSize: 27,
@@ -39,7 +38,7 @@ class _FifthTabState extends State<FifthTab> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: Icon(Icons.arrow_back, color: Colors.grey),
+                icon: const Icon(Icons.arrow_back, color: Colors.grey),
               ),
             ),
             body: Padding(
@@ -56,26 +55,26 @@ class _FifthTabState extends State<FifthTab> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Text(
+                    const Text(
                       '김민준',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 35,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       '[24, INTP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
-                    Divider(
+                    const Divider(
                       color: Colors.black,
                       thickness: 1,
                       height: 20,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Row(
                           children: [
@@ -138,10 +137,10 @@ class _FifthTabState extends State<FifthTab> {
                                     return Padding(
                                       padding: const EdgeInsets.all(16),
                                       child: ListTile(
-                                        tileColor:
-                                            Color.fromARGB(255, 244, 242, 242),
+                                        tileColor: const Color.fromARGB(
+                                            255, 244, 242, 242),
                                         trailing: IconButton(
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.delete,
                                             color: Colors.pink,
                                           ),
@@ -149,7 +148,7 @@ class _FifthTabState extends State<FifthTab> {
                                             showDeleteDialog(context, index);
                                           },
                                         ),
-                                        title: Text("댓글"),
+                                        title: const Text("댓글"),
                                         subtitle: Text(
                                           memo5.content,
                                           maxLines: 3,
@@ -204,7 +203,7 @@ class _FifthTabState extends State<FifthTab> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("정말로 삭제하시겠습니까?"),
+          title: const Text("정말로 삭제하시겠습니까?"),
           actions: [
             TextButton(
               onPressed: () {
@@ -212,7 +211,7 @@ class _FifthTabState extends State<FifthTab> {
                     .deleteMemo5(index: index);
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 "확인",
                 style: TextStyle(color: Colors.blue),
               ),
@@ -222,7 +221,7 @@ class _FifthTabState extends State<FifthTab> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 "취소",
                 style: TextStyle(color: Colors.pink),
               ),
