@@ -115,7 +115,40 @@ class _ThirdTabState extends State<ThirdTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("부딛쳐봐야 더 잘한다."),
+                            Text("부딪쳐봐야 더 잘한다."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "협업 스타일",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("팀원의 문제를 함께 도와줄 수 있는."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "팀특징",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("I밖에 없어서 조용하다"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "목표",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("장수하는 개발자"),
                           ],
                         ),
                       ],
