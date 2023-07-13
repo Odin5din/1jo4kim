@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
+      home: const DefaultTabController(
         length: 5,
         initialIndex: 0,
         child: HomePage(),

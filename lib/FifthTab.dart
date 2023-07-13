@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'main.dart';
 
@@ -63,7 +64,7 @@ class _FifthTabState extends State<FifthTab> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[24,INFP]',
+                      '[24, INFP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -78,15 +79,20 @@ class _FifthTabState extends State<FifthTab> {
                       children: [
                         Row(
                           children: [
-                            Text("블로그 주소"),
-                            SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text(
+                              "블로그 주소",
+                              style: TextStyle(color: Colors.brown),
+                            ),
+                            SizedBox(width: 10),
+                            Text("https://velog.io/@thundevistan"),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
                           children: [
-                            Text("강점"),
+                            Text(
+                              "강점",
+                            ),
                             SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
@@ -95,7 +101,7 @@ class _FifthTabState extends State<FifthTab> {
                         Row(
                           children: [
                             Text("앞으로의 각오"),
-                            SizedBox(width: 15),
+                            SizedBox(width: 10),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),
