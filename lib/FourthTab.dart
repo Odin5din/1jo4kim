@@ -79,7 +79,7 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("블로그 주소"),
-                            SizedBox(width: 30),
+                            SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),
@@ -87,7 +87,7 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("강점"),
-                            SizedBox(width: 30),
+                            SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),
@@ -95,7 +95,7 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("앞으로의 각오"),
-                            SizedBox(width: 30),
+                            SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),
@@ -103,7 +103,7 @@ class _FourthTabState extends State<FourthTab> {
                         Row(
                           children: [
                             Text("느낀점"),
-                            SizedBox(width: 30),
+                            SizedBox(width: 15),
                             Text("끈기있는 엉덩이"),
                           ],
                         ),

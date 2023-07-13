@@ -74,8 +74,43 @@ class _FifthTabState extends State<FifthTab> {
                       thickness: 1,
                       height: 20,
                     ),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("블로그 주소"),
+                            SizedBox(width: 15),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("강점"),
+                            SizedBox(width: 15),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("앞으로의 각오"),
+                            SizedBox(width: 15),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("느낀점"),
+                            SizedBox(width: 15),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                      ],
+                    ),
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(1),
                       child: memo5List.isEmpty
                           ? const Center(
                               child: Text("입력된 메모가 없습니다."),
@@ -101,7 +136,8 @@ class _FifthTabState extends State<FifthTab> {
                                             showDeleteDialog(context, index);
                                           },
                                         ),
-                                        title: Text(
+                                        title: Text("댓글"),
+                                        subtitle: Text(
                                           memo5.content,
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
