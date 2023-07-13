@@ -85,7 +85,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("https://velog.io/@boomshh"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -96,7 +96,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("책임감, 공감잘함(F가 90%)"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -107,7 +107,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("잠은 죽어서 자겠다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -118,7 +118,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("부딪쳐봐야 더 잘한다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -129,7 +129,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("팀원의 문제를 함께 도와줄 수 있는."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -140,7 +140,7 @@ class _ThirdTabState extends State<ThirdTab> {
                             Text("I밖에 없어서 조용하다"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(

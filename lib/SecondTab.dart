@@ -86,7 +86,7 @@ class _SecondTabState extends State<SecondTab> {
                             Text("https://odin5din.tistory.com/"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -97,7 +97,7 @@ class _SecondTabState extends State<SecondTab> {
                             Text("내세울 만한 점이 없다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -108,7 +108,7 @@ class _SecondTabState extends State<SecondTab> {
                             Text("말이 아닌 행동으로 열심히 하겠습니다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -119,7 +119,7 @@ class _SecondTabState extends State<SecondTab> {
                             Text("아직 멀었다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -130,7 +130,7 @@ class _SecondTabState extends State<SecondTab> {
                             Text("못하지만 노력으로 극복하자!"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(

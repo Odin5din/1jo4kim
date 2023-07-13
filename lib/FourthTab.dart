@@ -86,7 +86,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("https://brunch.co.kr/@2245edea227e49b"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -97,7 +97,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("안 되면 될 때 까지"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -108,7 +108,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("어플 개발 하고 만다."),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -119,7 +119,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("폐 끼치지 않도록 열심히 함"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -130,7 +130,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("말이 없음"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -141,7 +141,7 @@ class _FourthTabState extends State<FourthTab> {
                             Text("팀 - 비싼 개발자 / 개인 연 매출 1조 사업가"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(

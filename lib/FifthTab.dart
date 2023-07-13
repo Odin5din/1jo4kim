@@ -86,7 +86,7 @@ class _FifthTabState extends State<FifthTab> {
                             Text("https://velog.io/@thundevistan"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -97,7 +97,7 @@ class _FifthTabState extends State<FifthTab> {
                             Text("포기를 모르는 구글링"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -108,7 +108,7 @@ class _FifthTabState extends State<FifthTab> {
                             Text("5개월 간 외출금지"),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             Text(
@@ -117,6 +117,39 @@ class _FifthTabState extends State<FifthTab> {
                             ),
                             SizedBox(width: 15),
                             Text("중요한 건 꺾이지 않는 소통"),
+                          ],
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              "협업 스타일",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("존중은 하지만 아닌 건 아니다."),
+                          ],
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              "팀특징",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("고운말 사용함"),
+                          ],
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              "목표",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("공유할 수 있는 지식과 경험을 갖춘 개발자"),
                           ],
                         ),
                       ],
