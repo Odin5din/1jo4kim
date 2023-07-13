@@ -48,8 +48,8 @@ class _SecondTabState extends State<SecondTab> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        'https://cdn2.thecatapi.com/images/6bt.jpg',
+                      child: Image.asset(
+                        'assets/images/kjk.jpg',
                         width: 170,
                         height: 170,
                         fit: BoxFit.cover,
@@ -94,18 +94,18 @@ class _SecondTabState extends State<SecondTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("내세울 만한 점이 없다."),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
                           children: [
                             Text(
-                              "앞으로의 각오",
+                              "각오",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
-                            Text("끈기있는 엉덩이"),
+                            Text("말이 아닌 행동으로 열심히 하겠습니다."),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -116,7 +116,7 @@ class _SecondTabState extends State<SecondTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("아직 멀었다."),
                           ],
                         ),
                       ],

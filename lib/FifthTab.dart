@@ -49,8 +49,8 @@ class _FifthTabState extends State<FifthTab> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        'https://cdn2.thecatapi.com/images/6bt.jpg',
+                      child: Image.asset(
+                        'assets/images/khj_720.jpg',
                         width: 170,
                         height: 170,
                         fit: BoxFit.cover,
@@ -95,7 +95,7 @@ class _FifthTabState extends State<FifthTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("포기를 모르는 구글링"),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -106,7 +106,7 @@ class _FifthTabState extends State<FifthTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
-                            Text("끈기있는 엉덩이"),
+                            Text("5개월 간 외출금지"),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -117,7 +117,7 @@ class _FifthTabState extends State<FifthTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("중요한 건 꺾이지 않는 소통"),
                           ],
                         ),
                       ],

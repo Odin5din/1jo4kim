@@ -48,8 +48,8 @@ class _FourthTabState extends State<FourthTab> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        'https://cdn2.thecatapi.com/images/6bt.jpg',
+                      child: Image.asset(
+                        'assets/images/kmj.png',
                         width: 170,
                         height: 170,
                         fit: BoxFit.cover,
@@ -94,18 +94,51 @@ class _FourthTabState extends State<FourthTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("안 되면 될 때 까지"),
                           ],
                         ),
                         SizedBox(height: 20),
                         Row(
                           children: [
                             Text(
-                              "앞으로의 각오",
+                              "각오",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
-                            Text("끈기있는 엉덩이"),
+                            Text("어플 개발 하고 만다."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "협업 스타일",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("폐 끼치지 않도록 열심히 함"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "팀특징",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("말이 없음"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "목표",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("팀 - 비싼 개발자 / 개인 연 매출 1조 사업가"),
                           ],
                         ),
                         SizedBox(height: 20),
@@ -116,7 +149,7 @@ class _FourthTabState extends State<FourthTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("끈기있는 엉덩이"),
+                            Text("가운데 정렬이 이렇게 어려울 줄이야"),
                           ],
                         ),
                       ],

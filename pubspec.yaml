@@ -67,6 +67,10 @@ flutter:
      - assets/images/mycode_360.gif
      - assets/images/dog_240.jpg
      - assets/images/piglet_720.jpg
+     - assets/images/khj_720.jpg
+     - assets/images/kjk.jpg
+     - assets/images/khj.jpg
+     - assets/images/kmj.png
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
