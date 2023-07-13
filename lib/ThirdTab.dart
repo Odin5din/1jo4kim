@@ -78,7 +78,7 @@ class _ThirdTabState extends State<ThirdTab> {
                         Row(
                           children: [
                             Text(
-                              "블로그 주소",
+                              "블로그",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
@@ -115,10 +115,48 @@ class _ThirdTabState extends State<ThirdTab> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 15),
-                            Text("부딛쳐봐야 더 잘한다."),
+                            Text("부딪쳐봐야 더 잘한다."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "협업 스타일",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("팀원의 문제를 함께 도와줄 수 있는."),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "팀특징",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("I밖에 없어서 조용하다"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "목표",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("장수하는 개발자"),
                           ],
                         ),
                       ],
+                    ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(1),
@@ -134,7 +172,10 @@ class _ThirdTabState extends State<ThirdTab> {
                                   itemBuilder: (context, index) {
                                     Memo3 memo3 = memo3List[index];
                                     return Padding(
-                                      padding: const EdgeInsets.all(16),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 0,
+                                      ),
                                       child: ListTile(
                                         tileColor: const Color.fromARGB(
                                             255, 244, 242, 242),

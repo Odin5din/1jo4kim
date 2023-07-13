@@ -79,7 +79,7 @@ class _SecondTabState extends State<SecondTab> {
                         Row(
                           children: [
                             Text(
-                              "블로그 주소",
+                              "블로그",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
@@ -121,6 +121,11 @@ class _SecondTabState extends State<SecondTab> {
                         ),
                       ],
                     ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(1),
                       child: memo2List.isEmpty
@@ -135,7 +140,10 @@ class _SecondTabState extends State<SecondTab> {
                                   itemBuilder: (context, index) {
                                     Memo2 memo2 = memo2List[index];
                                     return Padding(
-                                      padding: const EdgeInsets.all(16),
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 10,
+                                        horizontal: 0,
+                                      ),
                                       child: ListTile(
                                         tileColor: const Color.fromARGB(
                                             255, 244, 242, 242),

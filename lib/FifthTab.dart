@@ -79,7 +79,7 @@ class _FifthTabState extends State<FifthTab> {
                         Row(
                           children: [
                             Text(
-                              "블로그 주소",
+                              "블로그",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 10),
@@ -121,58 +121,68 @@ class _FifthTabState extends State<FifthTab> {
                         ),
                       ],
                     ),
+                    const Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.all(1),
+                      padding: const EdgeInsets.all(0),
                       child: memo5List.isEmpty
                           ? const Center(
                               child: Text("입력된 메모가 없습니다."),
                             )
-                          : Column(
-                              children: [
-                                ListView.builder(
-                                  shrinkWrap: true,
-                                  itemCount: memo5List.length,
-                                  itemBuilder: (context, index) {
-                                    Memo5 memo5 = memo5List[index];
-                                    return Padding(
-                                      padding: const EdgeInsets.all(16),
-                                      child: ListTile(
-                                        tileColor: const Color.fromARGB(
-                                            255, 244, 242, 242),
-                                        trailing: IconButton(
-                                          icon: const Icon(
-                                            Icons.delete,
-                                            color: Colors.pink,
+                          : SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: memo5List.length,
+                                    itemBuilder: (context, index) {
+                                      Memo5 memo5 = memo5List[index];
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 10,
+                                          horizontal: 0,
+                                        ),
+                                        child: ListTile(
+                                          tileColor: const Color.fromARGB(
+                                              255, 244, 242, 242),
+                                          trailing: IconButton(
+                                            icon: const Icon(
+                                              Icons.delete,
+                                              color: Colors.pink,
+                                            ),
+                                            onPressed: () {
+                                              showDeleteDialog(context, index);
+                                            },
                                           ),
-                                          onPressed: () {
-                                            showDeleteDialog(context, index);
+                                          title: const Text("댓글"),
+                                          subtitle: Text(
+                                            memo5.content,
+                                            maxLines: 3,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: const TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (_) => DetailPage(
+                                                  index: index,
+                                                ),
+                                              ),
+                                            );
                                           },
                                         ),
-                                        title: const Text("댓글"),
-                                        subtitle: Text(
-                                          memo5.content,
-                                          maxLines: 3,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: const TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                          ),
-                                        ),
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (_) => DetailPage(
-                                                index: index,
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ],
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
                             ),
                     ),
                   ],
