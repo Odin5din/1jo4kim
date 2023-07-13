@@ -63,7 +63,7 @@ class _ThirdTabState extends State<ThirdTab> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[26,ISFP]',
+                      '[27, ISFP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

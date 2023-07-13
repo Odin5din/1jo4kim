@@ -64,7 +64,7 @@ class _FifthTabState extends State<FifthTab> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[24, INFP]',
+                      '[24, INTP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,

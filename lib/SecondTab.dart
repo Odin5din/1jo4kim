@@ -63,7 +63,7 @@ class _SecondTabState extends State<SecondTab> {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '[34,INFP]',
+                      '[34, INFP]',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
