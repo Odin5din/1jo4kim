@@ -119,6 +119,18 @@ class _SecondTabState extends State<SecondTab> {
                             Text("아직 멀었다."),
                           ],
                         ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text(
+                              "협업 스타일",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(width: 15),
+                            Text("못하지만 노력으로 극복하자!"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
                         Row(
                           children: [
                             Text(
