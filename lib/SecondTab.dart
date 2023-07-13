@@ -98,6 +98,40 @@ class _SecondTabState extends State<SecondTab> {
       },
     );
   }
+
+  void showDeleteDialog(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("정말로 삭제하시겠습니까?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Provider.of<Memo2Service>(context, listen: false)
+                    .deleteMemo2(index: index);
+                Navigator.pop(context);
+              },
+              child: Text(
+                "확인",
+                style: TextStyle(color: Colors.blue),
+              ),
+            ),
+            // 취소 버튼
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                "취소",
+                style: TextStyle(color: Colors.pink),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
 
 class DetailPage extends StatelessWidget {

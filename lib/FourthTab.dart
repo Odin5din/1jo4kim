@@ -22,21 +22,95 @@ class _FourthTabState extends State<FourthTab> {
           padding: const EdgeInsets.all(8.0),
           child: Scaffold(
             backgroundColor: Colors.white,
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0.7,
+              centerTitle: true,
+              title: Text(
+                'This is ME',
+                style: TextStyle(
+                  fontSize: 27,
+                  color: Color.fromARGB(255, 45, 45, 45),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.arrow_back, color: Colors.grey),
+              ),
+            ),
             body: Padding(
               padding: const EdgeInsets.all(20),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    // 이미지 경로 설정
-                    const Text(
-                      '김민지',
-                      style: TextStyle(
-                        color: Colors.black,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.network(
+                        'https://cdn2.thecatapi.com/images/6bt.jpg',
+                        width: 170,
+                        height: 170,
+                        fit: BoxFit.cover,
                       ),
                     ),
-
+                    Text(
+                      '김민지',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '[29,ISTJ]',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.black,
+                      thickness: 1,
+                      height: 20,
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("블로그 주소"),
+                            SizedBox(width: 30),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("강점"),
+                            SizedBox(width: 30),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("앞으로의 각오"),
+                            SizedBox(width: 30),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Text("느낀점"),
+                            SizedBox(width: 30),
+                            Text("끈기있는 엉덩이"),
+                          ],
+                        ),
+                      ],
+                    ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(1),
                       child: memo4List.isEmpty
                           ? const Center(
                               child: Text("입력된 메모가 없습니다."),
@@ -49,14 +123,27 @@ class _FourthTabState extends State<FourthTab> {
                                   itemBuilder: (context, index) {
                                     Memo4 memo4 = memo4List[index];
                                     return Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: const EdgeInsets.all(16),
                                       child: ListTile(
-                                        title: Text(
+                                        tileColor:
+                                            Color.fromARGB(255, 244, 242, 242),
+                                        trailing: IconButton(
+                                          icon: Icon(
+                                            Icons.delete,
+                                            color: Colors.pink,
+                                          ),
+                                          onPressed: () {
+                                            showDeleteDialog(context, index);
+                                          },
+                                        ),
+                                        title: Text("댓글"),
+                                        subtitle: Text(
                                           memo4.content,
                                           maxLines: 3,
                                           overflow: TextOverflow.ellipsis,
                                           style: const TextStyle(
                                             color: Colors.black,
+                                            fontSize: 15,
                                           ),
                                         ),
                                         onTap: () {
@@ -98,6 +185,40 @@ class _FourthTabState extends State<FourthTab> {
       },
     );
   }
+
+  void showDeleteDialog(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("정말로 삭제하시겠습니까?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Provider.of<Memo4Service>(context, listen: false)
+                    .deleteMemo4(index: index);
+                Navigator.pop(context);
+              },
+              child: Text(
+                "확인",
+                style: TextStyle(color: Colors.blue),
+              ),
+            ),
+            // 취소 버튼
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                "취소",
+                style: TextStyle(color: Colors.pink),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }
 
 class DetailPage extends StatelessWidget {
@@ -127,19 +248,23 @@ class DetailPage extends StatelessWidget {
                     actions: [
                       TextButton(
                         onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: const Text("취소"),
-                      ),
-                      TextButton(
-                        onPressed: () {
                           memo4Service.deleteMemo4(index: index);
                           Navigator.pop(context);
                           Navigator.pop(context);
                         },
                         child: const Text(
                           "확인",
-                          style: TextStyle(color: Colors.pink),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text(
+                          "취소",
+                          style: TextStyle(
+                            color: Colors.pink,
+                          ),
                         ),
                       ),
                     ],
