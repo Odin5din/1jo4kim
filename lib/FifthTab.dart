@@ -163,7 +163,7 @@ class _FifthTabState extends State<FifthTab> {
                       padding: const EdgeInsets.all(0),
                       child: memo5List.isEmpty
                           ? const Center(
-                              child: Text("입력된 메모가 없습니다."),
+                              child: Text("작성된 글이 없습니다."),
                             )
                           : SingleChildScrollView(
                               child: Column(
@@ -332,7 +332,7 @@ class DetailPage extends StatelessWidget {
         child: TextField(
           controller: contentController,
           decoration: const InputDecoration(
-            hintText: "메모를 입력하세요",
+            hintText: "글을 남겨주세요",
             border: InputBorder.none,
           ),
           autofocus: true,

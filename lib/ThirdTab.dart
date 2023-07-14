@@ -162,7 +162,7 @@ class _ThirdTabState extends State<ThirdTab> {
                       padding: const EdgeInsets.all(1),
                       child: memo3List.isEmpty
                           ? const Center(
-                              child: Text("입력된 메모가 없습니다."),
+                              child: Text("작성된 글이 없습니다."),
                             )
                           : Column(
                               children: [
@@ -328,7 +328,7 @@ class DetailPage extends StatelessWidget {
         child: TextField(
           controller: contentController,
           decoration: const InputDecoration(
-            hintText: "메모를 입력하세요",
+            hintText: "글을 남겨주세요.",
             border: InputBorder.none,
           ),
           autofocus: true,
